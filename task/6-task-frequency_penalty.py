@@ -8,14 +8,22 @@ from task.app.main import run
 #       Default: 0.0
 #  User massage: Explain the water cycle in simple terms for children
 
+# TODO:
+#  Use `frequency_penalty` parameter with different range (-2.0 to 2.0).
 run(
-    deployment_name='gpt-4o',
+    deployment_name="gpt-4o",
     print_only_content=True,
-    # TODO:
-    #  Use `frequency_penalty` parameter with different range (-2.0 to 2.0).
+    max_tokens=1000,
+    frequency_penalty=-0.1,
 )
 
 # Pay attention that when we set for `gpt-4o` frequency_penalty as -2.0 - the request is running too long,
 # and in the result we can get something strange (such as repetitive words in the end).
 # Copy the results and then check with separate request and ask LLM where is more repetitive blocks in texts.
 # For Anthropic and Gemini this parameter will be ignored
+
+
+# Results
+# Lower frequency penalty resulting with repetitive tokens, usually in the end
+#  of the response. Higher penalty is opposite
+

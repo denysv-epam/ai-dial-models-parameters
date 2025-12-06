@@ -10,12 +10,21 @@ from task.app.main import run
 # - claude-3-7-sonnet@20250219
 # - gemini-2.5-pro
 
-run(
-    # TODO:
-    #  1. Provide `deployment_name` with model from the list above👆
-    #  2. Use `n` parameter with value in range from 1 to 5!
-)
+
+# TODO:
+#  1. Provide `deployment_name` with model from the list above👆
+#  2. Use `n` parameter with value in range from 1 to 5!
+
+run(deployment_name="gemini-2.5-pro", n=3)
 
 # Pay attention to the number of choices in the response!
 # If you have worked with ChatGPT, you have probably seen responses where ChatGPT offers you a choice between two
 # responses to select which one you prefer. This is done with the `n` parameter.
+
+
+# -----------------------------------------------------------------------------
+
+# Results
+# As expected, all models provides the 'n=3' choices in the response.
+# gemini-2.5-pro response is a bit solver, but the choices itself are more detailed.
+#  As well as gemini includes "thinking" content.
